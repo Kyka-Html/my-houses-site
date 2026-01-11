@@ -1,0 +1,215 @@
+:root {
+  --primary: #e67e22; /* Оранжевый - акцент */
+  --dark: #2c3e50; /* Темно-синий - заголовки */
+  --light: #fdfaf7; /* Светло-бежевый - фон */
+  --white: #ffffff;
+  --success: #27ae60; /* Зеленый */
+}
+
+/* Сброс стандартных настроек */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: var(--white);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ШАПКА (Сделана липкой, чтобы номер был всегда виден) */
+header {
+  padding: 15px 0;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark);
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.phone-link {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 700;
+  border: 2px solid var(--primary);
+  padding: 8px 18px;
+  border-radius: 50px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.phone-link:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ГЛАВНЫЙ БЛОК (HERO) */
+#hero {
+  padding: 60px 0;
+  background: var(--light);
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  background: #fff3e0;
+  color: #e65100;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+h1 span {
+  color: var(--primary);
+}
+
+#hero p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.hero-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+/* КНОПКИ (Улучшены для 2026) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 35px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.4s;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  color: #ffffff !important; /* Всегда белый текст */
+}
+
+.btn-tg {
+  background: #0088cc;
+}
+
+.btn-call {
+  background: var(--dark);
+}
+
+.btn-large {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  font-size: 1.1rem;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* КАРТОЧКИ С ПРЕИМУЩЕСТВАМИ */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  padding: 50px 0;
+}
+
+.f-card {
+  padding: 35px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.f-card i {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.f-card h3 {
+  margin-bottom: 12px;
+  color: var(--dark);
+}
+
+/* ПРИЗЫВ К ДЕЙСТВИЮ (CTA) */
+#cta {
+  padding: 80px 0;
+  background: var(--dark);
+  color: white;
+  text-align: center;
+}
+
+#cta h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* ФУТЕР */
+footer {
+  padding: 40px 0;
+  text-align: center;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+/* АДАПТИВНОСТЬ (Для планшетов и ПК) */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  .hero-btns {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .feature-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .btn {
+    width: auto;
+  }
+}
